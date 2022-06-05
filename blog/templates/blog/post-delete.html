@@ -1,0 +1,25 @@
+{% extends 'users/base.html' %} {% block content %} {% load crispy_forms_tags %}
+
+<div class="container mx-auto">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="card card-body p-5">
+        <p>Are you sure you want to delete {{ blog.title }}?</p>
+        <form action="" method="post">
+          {% csrf_token %}
+          <button class="btn btn-warning">
+            <a
+              href="{% url 'home' %}"
+              style="text-decoration: none; color: white"
+              >Cancel</a
+            >
+          </button>
+
+          <input class="btn btn-danger ml-3" type="submit" value="Yes" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

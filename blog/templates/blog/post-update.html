@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %} {% block content %} {% load crispy_forms_tags %}
+
+<div class="container w-50">
+  <h3>Update Post</h3>
+  <hr />
+
+  <form action="" method="POST">
+    {% csrf_token %} {{ blog_form | crispy }}
+
+    <button type="submit" class="btn btn-outline-primary mt-3">Update</button>
+  </form>
+</div>
+
+{% endblock content %}
