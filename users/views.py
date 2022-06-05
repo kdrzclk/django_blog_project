@@ -76,3 +76,14 @@ def user_logout(request):
 
 #     return render(request, 'registration/profile.html', {'user_form': user_form,'profile_form': profile_form })
 
+def profile(request):
+    user_form = UserForm(request.POST or None, instance=request.user)
+    profile_form = UserProfileForm(request.POST or None, instance=request.user.userprofile, files=request.FILES)
+
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form
+    }
+
+    return render(request, 'registration/profile.html', context )
+

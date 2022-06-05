@@ -13,7 +13,8 @@ class UserForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ('user',)
+        # fields = "__all__"
+        exclude = ('user', 'password1', 'password2')
 
 # class UpdateProfileForm(forms.ModelForm):
    
